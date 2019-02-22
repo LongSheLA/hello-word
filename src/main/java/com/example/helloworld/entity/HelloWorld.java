@@ -1,9 +1,6 @@
 package com.example.helloworld.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  *  Hello world entity
@@ -11,6 +8,7 @@ import javax.persistence.Id;
  * @date 2019/2/20 10:36
  */
 @Entity
+@Table(name = "hello_world", schema = "adv_hello_world")
 public class HelloWorld {
 
     @Id
