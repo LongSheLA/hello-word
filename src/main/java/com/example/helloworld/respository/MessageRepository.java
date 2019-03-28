@@ -1,6 +1,7 @@
 package com.example.helloworld.respository;
 
-import com.example.helloworld.entity.HelloWorld;
+
+import com.example.helloworld.entity.MessageEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -8,5 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author dongdong.jiang
  * @date 2019/2/20 10:46
  */
-public interface HelloWorldRepository extends JpaRepository<HelloWorld, Long> {
+public interface MessageRepository extends JpaRepository<MessageEntity, Long> {
 }

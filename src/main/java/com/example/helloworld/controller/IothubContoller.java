@@ -1,8 +1,8 @@
 package com.example.helloworld.controller;
 
 
-import com.example.helloworld.entity.HelloWorld;
-import com.example.helloworld.service.IHelloWorldService;
+import com.example.helloworld.entity.MessageEntity;
+import com.example.helloworld.service.IiothubService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,14 +17,14 @@ import java.util.List;
  * @date 2019/2/19 11:42
  */
 @RestController
-public class HelloworldContoller {
+public class IothubContoller {
 
     @Autowired
-    private IHelloWorldService helloWorldService;
+    private IiothubService iiothubService;
 
     @GetMapping("hello")
     public ResponseEntity<?> getMassage(){
-        List<HelloWorld> helloWorld = helloWorldService.getHelloWorld();
+        List<MessageEntity> helloWorld = iiothubService.getHelloWorld();
         return ResponseEntity.status(HttpStatus.OK).body(helloWorld);
     }
 }
