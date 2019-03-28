@@ -14,8 +14,6 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  *  RabbitMQ server config
- * @author dongdong.jiang
- * @date 2019/2/19 11:42
  */
 @Configuration
 public class RabbitTopicConfig {
@@ -59,7 +57,6 @@ public class RabbitTopicConfig {
      * bind the queue and exchange thought key
      * @param queueConfig queue
      * @param exchange exchange
-     * @return
      */
     @Bean
     public Binding bindingExchangeConfig(@Qualifier("helloWorldConfig")Queue queueConfig, @Qualifier("helloWorldExchange") TopicExchange exchange) {

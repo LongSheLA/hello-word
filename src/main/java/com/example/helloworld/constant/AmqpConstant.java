@@ -4,9 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *  the information to connect the iothub
- * @author dongdong.jiang
- * @date 2019/2/19 11:42
+ * The information to connect the iothub
  */
 public class AmqpConstant {
 

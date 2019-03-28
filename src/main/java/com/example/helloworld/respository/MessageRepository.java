@@ -6,8 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * Hello world repository
- * @author dongdong.jiang
- * @date 2019/2/20 10:46
  */
-public interface MessageRepository extends JpaRepository<MessageEntity, Long> {
+public interface MessageRepository extends JpaRepository<MessageEntity, Long>,CustomMessageRepository {
 }

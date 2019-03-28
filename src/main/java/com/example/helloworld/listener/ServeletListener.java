@@ -7,25 +7,29 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 /**
- * 项目启动前 监听
- * @author dongdong.jiang
- * @date 2018/9/7 10:29
+ * monitor the servlet container
  */
 @WebListener("ServletListener")
 public class ServeletListener implements ServletContextListener {
     public ServeletListener() {}
 
+    /**
+     * The method to be executed before servlet initialised
+     */
     @Override
     public void contextInitialized(ServletContextEvent e){
         try {
-            System.out.println("----------------Servlet Initialiszed.-----------------");
-            CloudFoundryUtil.getDatabaseFromSystemVariables();
+            System.out.println("----------------Servlet Initialised.-----------------");
+            CloudFoundryUtil.getDatabaseAndRabbitInfoFromEnv();
         }
         catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
 
+    /**
+     * The method to be executed before servlet destroyed
+     */
     @Override
     public void contextDestroyed(ServletContextEvent e) {
         System.out.println("------------------------Servlet Destroyed.-------------------");

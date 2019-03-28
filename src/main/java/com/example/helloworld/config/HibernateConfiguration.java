@@ -20,7 +20,7 @@ public class HibernateConfiguration {
     @Bean
     @FlywayDataSource
     public DataSource dataSource() {
-        System.out.println("*********初始化数据库*********");
+        System.out.println("*********int database*********");
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         try {
             dataSource.setDriverClassName("org.postgresql.Driver");

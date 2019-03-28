@@ -19,13 +19,13 @@ public class IothubServiceImpl implements IiothubService {
     private MessageRepository messageRepository;
 
     @Override
-    public List<MessageEntity> getMessage(){
-        return messageRepository.findAll();
+    public List<MessageEntity> getMessage(String name, String startTime, String endTime){
+        return messageRepository.findMessageByNameOrTime(name,startTime, endTime);
     }
 
 
     @Override
-    public List<MessageEntity> saveMesage(List<MessageEntity> helloWorldList){
+    public List<MessageEntity> saveMessage(List<MessageEntity> helloWorldList){
         return messageRepository.saveAll(helloWorldList);
     }
 }

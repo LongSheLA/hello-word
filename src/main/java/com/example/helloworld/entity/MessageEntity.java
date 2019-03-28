@@ -2,11 +2,7 @@ package com.example.helloworld.entity;
 
 import javax.persistence.*;
 
-/**
- *  Hello world entity
- * @author dongdong.jiang
- * @date 2019/2/20 10:36
- */
+
 @Entity
 @Table(name = "t_message_entity", schema = "s_iot_hub_test")
 public class MessageEntity {

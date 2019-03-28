@@ -1,9 +1,5 @@
 package com.example.helloworld.entity;
 
-/**
- * @author dongdong.jiang
- * @date 2019/3/27 19:08
- */
 public class MessageDTO {
 
     private String name;

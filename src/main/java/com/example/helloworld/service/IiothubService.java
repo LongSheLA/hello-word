@@ -11,15 +11,18 @@ import java.util.List;
 public interface IiothubService {
 
     /**
-     * get hello world list
+     * select received message by name or startTime or endTime
+     * @param name  the name of message
+     * @param startTime ts
+     * @param endTime ts
      * @return the result of select
      */
-    List<MessageEntity> getMessage();
+    List<MessageEntity> getMessage(String name, String startTime, String endTime);
 
     /**
-     * save message list
+     * save message
      * @param messageList
      * @return
      */
-    List<MessageEntity> saveMesage(List<MessageEntity> messageList);
+    List<MessageEntity> saveMessage(List<MessageEntity> messageList);
 }

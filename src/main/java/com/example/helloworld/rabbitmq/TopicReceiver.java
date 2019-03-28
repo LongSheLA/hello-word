@@ -15,9 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  topic receiver
- * @author dongdong.jiang
- * @date 2019/2/19 11:42
+ *  Topic receiver
  */
 @Component
 @RabbitListener(queues = RabbitConstants.CONFIGQUEUENAME)
@@ -41,6 +39,6 @@ public class TopicReceiver {
             messageList.add(msg);
         });
 
-        iiothubService.saveMesage(messageList);
+        iiothubService.saveMessage(messageList);
     }
 }
