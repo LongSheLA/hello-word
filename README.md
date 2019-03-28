@@ -1,2 +1,2 @@
-# wise-pass Demo
+# Wise-Pass Demo
 It is  a demo that apply to develop yourself app in wise-pass
