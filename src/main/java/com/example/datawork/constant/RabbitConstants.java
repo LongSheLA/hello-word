@@ -5,6 +5,6 @@ package com.example.datawork.constant;
  */
 public class RabbitConstants {
     public static final String EXCHANGENAME = "amq.topic";
-    public static final String CONFIGQUEUENAME = "wisepaas.iothub.queue";
-    public static final String CONFIGBINDINGKEY = "wisepaas.iothub.test.message";
+    public static final String CONFIGQUEUENAME = "apm.demo.machine.queue";
+    public static final String CONFIGBINDINGKEY = "apm.demo.work.message";
 }

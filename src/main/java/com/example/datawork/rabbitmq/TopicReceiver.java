@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  *  Topic receiver
+ *
  */
 @Component
 @RabbitListener(queues = RabbitConstants.CONFIGQUEUENAME)
@@ -26,18 +27,22 @@ public class TopicReceiver {
     @RabbitListener(queues = RabbitConstants.CONFIGQUEUENAME, containerFactory="rabbitListenerContainerFactory")
     public void process(String message) {
         System.out.println("Topic Receiver Config  : " + message);
+        try{
+            List<MessageDTO> messageDTOS = JSONObject.parseArray(message, MessageDTO.class);
 
-        List<MessageDTO> messageDTOS = JSONObject.parseArray(message, MessageDTO.class);
+            List<MessageEntity> messageList = new ArrayList<>(16);
+            messageDTOS.forEach(m -> {
+                MessageEntity msg = new MessageEntity();
+                msg.setName(m.getName());
+                msg.setValue(m.getValue());
+                msg.setTs(TimeUtil.getCurrentTime());
+                messageList.add(msg);
+            });
 
-        List<MessageEntity> messageList = new ArrayList<>(16);
-        messageDTOS.forEach(m -> {
-            MessageEntity msg = new MessageEntity();
-            msg.setName(m.getName());
-            msg.setValue(m.getValue());
-            msg.setTs(TimeUtil.getCurrentTime());
-            messageList.add(msg);
-        });
+            iiothubService.saveMessage(messageList);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
-        iiothubService.saveMessage(messageList);
     }
 }
